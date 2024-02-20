@@ -1,253 +1,217 @@
-# DOLIBARR ERP & CRM
-
-![Downloads per day](https://img.shields.io/sourceforge/dw/dolibarr.svg)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square)](https://php.net/)
-[![GitHub release](https://img.shields.io/github/v/release/Dolibarr/dolibarr)](https://github.com/Dolibarr/dolibarr)
-[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/5521/badge)](https://bestpractices.coreinfrastructure.org/projects/5521)
-
-Dolibarr ERP & CRM is a modern software package that helps manage your organization's activity (contacts, suppliers, invoices, orders, stocks, agenda…).
-
-It's an Open Source Software suite (written in PHP with optional JavaScript enhancements) designed for small, medium or large companies, foundations and freelancers.
-
-You can freely use, study, modify or distribute it according to its license.
-
-You can use it as a standalone application or as a web application to access it from the Internet or a LAN.
-
-Dolibarr has a large community ready to help you, free forums and [preferred partners ready to offer commercial support should you need it](https://partners.dolibarr.org)
-
-![ScreenShot](https://www.dolibarr.org/medias/dolibarr_screenshot1_1920x1080.jpg)
-
-## LICENSE
-
-Dolibarr is released under the terms of the GNU General Public License as published by the Free Software Foundation; either version 3 of the License, or (at your option) any later version (GPL-3+).
-
-See the [COPYING](https://github.com/Dolibarr/dolibarr/blob/develop/COPYING) file for a full copy of the license.
-
-Other licenses apply for some included dependencies. See [COPYRIGHT](https://github.com/Dolibarr/dolibarr/blob/develop/COPYRIGHT) for a full list.
-
-## INSTALLING
-
-### Simple setup
-
-If you have low technical skills and you're looking to install Dolibarr ERP/CRM in just a few clicks, you can use one of the packaged versions:
-
-- [DoliWamp for Windows](https://wiki.dolibarr.org/index.php/Dolibarr_for_Windows_(DoliWamp))
-- [DoliDeb for Debian](https://wiki.dolibarr.org/index.php/Dolibarr_for_Ubuntu_or_Debian)
-- DoliRpm for Redhat, Fedora, OpenSuse, Mandriva or Mageia
-
-Releases can be downloaded from [official website](https://www.dolibarr.org/).
-
-### Advanced setup
-
-You can use a web server and a supported database (MariaDB, MySQL or PostgreSQL) to install the standard version.
-
-On GNU/Linux, first check if your distribution has already packaged Dolibarr.
-
-#### Generic install steps
-
-- Check that your installed PHP version is supported [see PHP support](https://wiki.dolibarr.org/index.php/Releases).
-
-- Uncompress the downloaded .zip archive to copy the "dolibarr/htdocs" directory and all its files inside your web server root or get the files directly from GitHub (recommended if you know git as it makes it easier if you want to upgrade later):
-
-  `git clone https://github.com/dolibarr/dolibarr -b x.y`     (where x.y is the main version like 3.6, 9.0, ...)
-
-- Set up your web server to use "*dolibarr/htdocs*" as root if your web server does not have an already defined directory to point to.
-
-- Create an empty `htdocs/conf/conf.php` file and set *write* permissions for your web server user (*write* permission will be removed once install is finished)
-
-- From your browser, go to the dolibarr "install/" page
-
-  The URL will depends on how your web setup was set up to point to your dolibarr installation. It may look like:
-
-  `http://localhost/dolibarr/htdocs/install/`
-
-  or
-
-  `http://localhost/dolibarr/install/`
-
-  or
-
-  `http://yourdolibarrvirtualhost/install/`
-
-- Follow the installer instructions
-
-### SaaS/Cloud setup
-
-If you don't have time to install it yourself, you can try some commercial 'ready to use' Cloud offers (See [https://saas.dolibarr.org](https://saas.dolibarr.org)). However, this third solution is not free.
-
-## UPGRADING
-
-Dolibarr supports upgrading, usually without the need for any (commercial) support (depending on if you use any commercial extensions). It supports upgrading all the way from any version after 2.8 without breakage. This is unique in the ERP ecosystem and a benefit our users highly appreciate!
-
-- At first make a backup of your Dolibarr files & then [see](https://wiki.dolibarr.org/index.php/Installation_-_Upgrade#Upgrade_Dolibarr)
-- Check that your installed PHP version is supported by the new version [see PHP support](https://wiki.dolibarr.org/index.php/Releases).
-- Overwrite all old files from the 'dolibarr' directory with files provided into the new version's package.
-- At first next access, Dolibarr will redirect you to the "install/" page to follow the upgrade process.
-  If an `install.lock` file exists to lock any other upgrade process, the application will ask you to remove the file manually (you should find the `install.lock` file in the directory used to store generated and uploaded documents, in most cases, it is the directory called "*documents*").
-
-## WHAT'S NEW
-
-See the [ChangeLog](https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog) file.
-
-## FEATURES
-
-### Main application/modules (all optional)
-
-- Third-Parties Management: Customers, Prospects (Leads) and/or Suppliers + Contacts
-- Members/Membership/Foundation management
-
- Product Management
-
-- Products and/or Services catalogue
-- Stock / Warehouse management + Inventory
-- Barcodes
-- Batches / Lots / Serials
-- Product Variants
-- Bill of Materials (BOM)
-- Manufacturing Orders (MO)
-
- Customer/Sales Management
-
-- Customers/Prospects + Contacts management
-- Opportunities or Leads management
-- Commercial proposals management (online signing)
-- Customer Orders management
-- Contracts/Subscription management
-- Interventions management
-- Ticket System  (+ Knowledge management)
-- Partnership management
-- Shipping management
-- Customer Invoices/Credit notes and payment management
-- Point of Sale (POS)
-
- Supplier/Purchase Management
-
-- Suppliers/Vendors + Contacts
-- Supplier (price) requests
-- Purchase Orders management
-- Delivery/Reception
-- Supplier Invoices/credit notes and payment management
-- INCOTERMS
-
- Finance/Accounting
-
-- Invoices/Payments
-- Bank accounts management
-- Direct debit and Credit transfer management (European SEPA)
-- Accounting management
-- Donations management
-- Loan management
-- Margins
-- Reports
-
- Collaboration
-
-- Shared calendar/agenda (with ical and vcal import/export for third-party tools integration)
-- Projects & Tasks management
-- Event organization
-- Ticket System
-- Surveys
-
- HR - Human Resources Management
-
-- Employee's leaves management
-- Expense reports
-- Recruitment management
-- Employee/staff management
-- Timesheets
-
-### Other application/modules
-
-- Electronic Document Management (EDM)
-- Bookmarks
-- Reporting
-- Data export/import
-- Barcodes
-- LDAP connectivity
-- ClickToDial integration
-- Mass emailing
-- RSS integration
-- Social platforms linking
-- Payment platforms integration (PayPal, Stripe, Paybox...)
-- Email-Collector
-
-(around 100 modules available by default, 1000+ addons at the official marketplace Dolistore.com)
-
-### Other general features
-
-- Multi-Language Support (Localization in most major languages)
-- Multi-users and groups with finely-grained rights
-- Multi-Currency
-- Multi-Company (by adding of an external module)
-- Very user-friendly and easy to use
-- Customizable dashboards
-- Highly customizable: enable only the modules you need, add user personalized fields, choose your skin, several menu managers (can be used by internal users as a back-office with a particular menu, or by external users as a front-office with another one)
-- APIs (REST, SOAP)
-- Code that is easy to understand, maintain and develop (PHP with no heavy framework; trigger and hook architecture)
-- Support a lot of country-specific features:
-  - Spanish Tax RE and ISPF
-  - French NPR VAT rate (VAT called "Non Perçue Récupérable" for DOM-TOM)
-  - Canadian double taxes (federal/province) and other countries using cumulative VAT
-  - Tunisian tax stamp
-  - Argentina invoice numbering using A,B,C...
-  - ZATCA e-invoicing QR-Code
-  - Compatible with [European directives](https://europa.eu/legislation_summaries/taxation/l31057_en.htm) (2006/112/CE ... 2010/45/UE)
-  - Compatible with data privacy rules (Europe GDPR, ...)
-  - ...
-- Flexible PDF & ODT generation for invoices, proposals, orders...
-- ...
-
-### System Environment / Requirements
-
-- PHP
-- MariaDB, MySQL or PostgreSQL
-- Compatible with all Cloud solutions that match PHP & MySQL or PostgreSQL prerequisites.
-
-See exact requirements on the [Wiki](https://wiki.dolibarr.org/index.php/Prerequisite)
-
-### Extending
-
-Dolibarr can be extended with a lot of other external applications or modules from third-party developers available at the [DoliStore](https://www.dolistore.com).
-
-## WHAT DOLIBARR CAN'T DO YET
-
-These are features that Dolibarr does **not** yet fully support:
-
-- Tasks dependencies in projects
-- Payroll module
-- No native embedded Webmail, but you can send emails to contacts in Dolibarr with e.g. offers, invoices, etc.
-- Dolibarr can't do coffee (yet)
-
-## DOCUMENTATION
-
-Administrator, user, developer and translator's documentation are available along with other community resources in the [Wiki](https://wiki.dolibarr.org).
-
-## CONTRIBUTING
-
-This project exists thanks to all the people who contribute.
-Please read the instructions on how to contribute (report a bug/error, a feature request, send code ...)  [[Contribute](https://github.com/Dolibarr/dolibarr/blob/develop/.github/CONTRIBUTING.md)]
-
-A View on Contributors:
-
-[![Dolibarr](https://opencollective.com/dolibarr/contributors.svg?width=890&button=false)](https://github.com/Dolibarr/dolibarr/graphs/contributors)
-
-## CREDITS
-
-Dolibarr is the work of many contributors over the years and uses some fine PHP libraries.
-
-See [COPYRIGHT](https://github.com/Dolibarr/dolibarr/blob/develop/COPYRIGHT) file.
-
-## NEWS AND SOCIAL NETWORKS
-
-Follow Dolibarr project on:
-
-- [Facebook](https://www.facebook.com/dolibarr)
-- [X](https://x.com/dolibarr)
-- [LinkedIn](https://www.linkedin.com/company/association-dolibarr)
-- [Reddit](https://www.reddit.com/r/Dolibarr_ERP_CRM/)
-- [YouTube](https://www.youtube.com/user/DolibarrERPCRM)
-- [GitHub](https://github.com/Dolibarr/dolibarr)
-
-### Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here. 🙏 [[Become a sponsor/backer](https://opencollective.com/dolibarr#backer)]
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><h1 tabindex="-1" dir="auto"><a id="user-content-dolibarr-erp--crm" class="anchor" aria-hidden="true" tabindex="-1" href="#dolibarr-erp--crm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多利巴尔 ERP 和 CRM</font></font></h1>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/aee787cc1edb712800ed703d8e8953e35f71277e5d6ee872687442d80caf5609/68747470733a2f2f696d672e736869656c64732e696f2f736f75726365666f7267652f64772f646f6c69626172722e737667"><img src="https://camo.githubusercontent.com/aee787cc1edb712800ed703d8e8953e35f71277e5d6ee872687442d80caf5609/68747470733a2f2f696d672e736869656c64732e696f2f736f75726365666f7267652f64772f646f6c69626172722e737667" alt="每日下载量" data-canonical-src="https://img.shields.io/sourceforge/dw/dolibarr.svg" style="max-width: 100%;"></a>
+<a href="https://php.net/" rel="nofollow"><img src="https://camo.githubusercontent.com/957d3da17d29a6cfda876ed556fb2be8f477b8fffaa6397c165d6028f40049ec/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7068702d253345253344253230372e312d3838393242462e7376673f7374796c653d666c61742d737175617265" alt="最低 PHP 版本" data-canonical-src="https://img.shields.io/badge/php-%3E%3D%207.1-8892BF.svg?style=flat-square" style="max-width: 100%;"></a>
+<a href="https://github.com/Dolibarr/dolibarr"><img src="https://camo.githubusercontent.com/ed11680723d631f0401de5fcd9dde0aea0e14afdf71fdcfee400249e43fafea5/68747470733a2f2f696d672e736869656c64732e696f2f6769746875622f762f72656c656173652f446f6c69626172722f646f6c6962617272" alt="GitHub 发布" data-canonical-src="https://img.shields.io/github/v/release/Dolibarr/dolibarr" style="max-width: 100%;"></a>
+<a href="https://bestpractices.coreinfrastructure.org/projects/5521" rel="nofollow"><img src="https://camo.githubusercontent.com/2b88db41f2f93c63d647c12edc21b1b6da8a9b9944dc4f0ad386e2e5b6ca0ab3/68747470733a2f2f626573747072616374696365732e636f7265696e6672617374727563747572652e6f72672f70726f6a656374732f353532312f6261646765" alt="CII 最佳实践" data-canonical-src="https://bestpractices.coreinfrastructure.org/projects/5521/badge" style="max-width: 100%;"></a></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr ERP 和 CRM 是一个现代软件包，可帮助管理您组织的活动（联系人、供应商、发票、订单、库存、议程……）。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">它是一个开源软件套件（用 PHP 编写，带有可选的 JavaScript 增强功能），专为小型、中型或大型公司、基金会和自由职业者设计。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以根据其许可自由使用、研究、修改或分发它。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以将其用作独立应用程序或用作 Web 应用程序以从 Internet 或 LAN 访问它。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 拥有一个随时为您提供帮助的大型社区、免费论坛和</font></font><a href="https://partners.dolibarr.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首选合作伙伴，可在您需要时随时提供商业支持</font></font></a></p>
+<p dir="auto"><a target="_blank" rel="noopener noreferrer nofollow" href="https://camo.githubusercontent.com/499810e2712a5645110d6cce67e2695832348b7cd715a1c88bf40c7da534ecd4/68747470733a2f2f7777772e646f6c69626172722e6f72672f6d65646961732f646f6c69626172725f73637265656e73686f74315f3139323078313038302e6a7067"><img src="https://camo.githubusercontent.com/499810e2712a5645110d6cce67e2695832348b7cd715a1c88bf40c7da534ecd4/68747470733a2f2f7777772e646f6c69626172722e6f72672f6d65646961732f646f6c69626172725f73637265656e73686f74315f3139323078313038302e6a7067" alt="截屏" data-canonical-src="https://www.dolibarr.org/medias/dolibarr_screenshot1_1920x1080.jpg" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-license" class="anchor" aria-hidden="true" tabindex="-1" href="#license"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">执照</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 根据自由软件基金会发布的 GNU 通用公共许可证条款发布；</font><font style="vertical-align: inherit;">许可证的版本 3，或（由您选择）任何更高版本 (GPL-3+)。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅</font></font><a href="https://github.com/Dolibarr/dolibarr/blob/develop/COPYING"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">复制</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件以获取许可证的完整副本。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他许可证适用于某些包含的依赖项。</font><font style="vertical-align: inherit;">完整列表</font><font style="vertical-align: inherit;">请参见</font></font><a href="https://github.com/Dolibarr/dolibarr/blob/develop/COPYRIGHT"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">版权。</font></font></a><font style="vertical-align: inherit;"></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-installing" class="anchor" aria-hidden="true" tabindex="-1" href="#installing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-simple-setup" class="anchor" aria-hidden="true" tabindex="-1" href="#simple-setup"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置简单</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您的技术技能水平较低，并且希望只需单击几下即可安装 Dolibarr ERP/CRM，则可以使用以下打包版本之一：</font></font></p>
+<ul dir="auto">
+<li><a href="https://wiki.dolibarr.org/index.php/Dolibarr_for_Windows_(DoliWamp)" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Windows 版 DoliWamp</font></font></a></li>
+<li><a href="https://wiki.dolibarr.org/index.php/Dolibarr_for_Ubuntu_or_Debian" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于 Debian 的 DoliDeb</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于 Red Hat、Fedora、OpenSuse、Mandriva 或 Mageia 的 DoliRpm</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://www.dolibarr.org/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发布版本可以从官方网站</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下载</font><font style="vertical-align: inherit;">。</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-advanced-setup" class="anchor" aria-hidden="true" tabindex="-1" href="#advanced-setup"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高级设置</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您可以使用 Web 服务器和支持的数据库（MariaDB、MySQL 或 PostgreSQL）来安装标准版本。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 GNU/Linux 上，首先检查您的发行版是否已经打包了 Dolibarr。</font></font></p>
+<h4 tabindex="-1" dir="auto"><a id="user-content-generic-install-steps" class="anchor" aria-hidden="true" tabindex="-1" href="#generic-install-steps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通用安装步骤</font></font></h4>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证您安装的 PHP 版本是否受支持，</font></font><a href="https://wiki.dolibarr.org/index.php/Releases" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅 PHP 支持</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">解压缩下载的 .zip 存档以复制</font></font><code>dolibarr/htdocs</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Web 服务器根目录中的目录及其所有文件，或直接从 GitHub 获取文件（如果您了解 git，建议您这样做，因为如果您想稍后升级，这会更容易）：</font></font></p>
+<p dir="auto"><code>git clone https://github.com/dolibarr/dolibarr -b x.y</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">     （其中 xy 是主要版本，如 3.6、9.0，...）</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>dolibarr/htdocs</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您的 Web 服务器尚未定义要指向的目录，</font><font style="vertical-align: inherit;">请将您的 Web 服务器设置为以 root 身份使用。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">创建一个空</font></font><code>htdocs/conf/conf.php</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件并</font><font style="vertical-align: inherit;">为您的网络服务器用户设置</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">写入</font></font></em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">权限（安装完成后</font></font><em><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">写入权限将被删除）</font></font></em><font style="vertical-align: inherit;"></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">从浏览器转到 dolibarr“install/”页面</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">URL 将取决于您的 Web 配置如何定向到 dolibarr 安装。</font><font style="vertical-align: inherit;">它可能看起来像：</font></font></p>
+<p dir="auto"><code>http://localhost/dolibarr/htdocs/install/</code></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者</font></font></p>
+<p dir="auto"><code>http://localhost/dolibarr/install/</code></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者</font></font></p>
+<p dir="auto"><code>http://yourdolibarrvirtualhost/install/</code></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">按照安装程序说明进行操作</font></font></p>
+</li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-saascloud-setup" class="anchor" aria-hidden="true" tabindex="-1" href="#saascloud-setup"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SaaS/云设置</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您没有时间自行安装，请考虑探索商业“即用型”云产品（请参阅</font></font><a href="https://saas.dolibarr.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://saas.dolibarr.org</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）。</font><font style="vertical-align: inherit;">请记住，第三种选择会带来相关成本。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-upgrading" class="anchor" aria-hidden="true" tabindex="-1" href="#upgrading"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">升级</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 支持升级，通常不需要任何（商业）支持（取决于您是否使用任何商业扩展）。</font><font style="vertical-align: inherit;">支持从2.8以后的任意版本一路升级，不会出现破损。</font><font style="vertical-align: inherit;">这在 ERP 生态系统中是独一无二的，也是我们用户高度赞赏的优势！</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请按照以下分步说明将 Dolibarr 无缝升级到最新版本：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">首先备份您的 Dolibarr 文件然后</font></font><a href="https://wiki.dolibarr.org/index.php/Installation_-_Upgrade#Upgrade_Dolibarr" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">查看</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">验证新版本是否支持您安装的 PHP 版本，</font></font><a href="https://wiki.dolibarr.org/index.php/Releases" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅 PHP 支持</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用新版本包中提供的文件覆盖“dolibarr”目录中的所有旧文件。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">下次访问时，Dolibarr 会将您重定向到“install/”页面以跟踪升级过程。</font><font style="vertical-align: inherit;">如果</font></font><code>install.lock</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">存在锁定任何其他升级过程的文件，应用程序将要求您手动删除该文件（您应该在用于存储生成和上传的文档的目录中找到该文件，在大多数情况下，它是名为“ </font><em><font style="vertical-align: inherit;">documents</font></em><font style="vertical-align: inherit;"> ”</font></font><code>install.lock</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的目录</font><font style="vertical-align: inherit;">）。</font></font><em><font style="vertical-align: inherit;"></font></em><font style="vertical-align: inherit;"></font></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-whats-new" class="anchor" aria-hidden="true" tabindex="-1" href="#whats-new"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">什么是新的</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅</font></font><a href="https://github.com/Dolibarr/dolibarr/blob/develop/ChangeLog"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">更改日志</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-features" class="anchor" aria-hidden="true" tabindex="-1" href="#features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特征</font></font></h2>
+<h3 tabindex="-1" dir="auto"><a id="user-content-main-applicationmodules-all-optional" class="anchor" aria-hidden="true" tabindex="-1" href="#main-applicationmodules-all-optional"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">主要应用/模块（全部可选）</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">第三方管理：客户、潜在客户（潜在客户）和/或供应商 + 联系人</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">会员/会员/基金会管理</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品管理</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品和/或服务目录</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">库存/仓库管理+库存</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">条形码</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">批次/批量/系列</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">产品型号</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">物料清单 (BOM)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">制造订单 (MO)</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">客户/销售管理</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">客户/潜在客户+联系人管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">机会或潜在客户管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">商业提案管理（在线签约）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">客户订单管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">合同/订阅管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">干预管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">工单系统（+知识管理）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">合作伙伴管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">运输管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">客户发票/贷方票据和付款管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">销售点 (POS)</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">供应商/采购管理</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">供应商/供货商 + 联系人</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">供应商（定价）请求</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">采购订单管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">交付/接收</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">供应商发票/贷方票据和付款管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">国际贸易术语解释通则</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">财务/会计</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发票/付款</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">银行账户管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">直接借记和贷记转账管理（欧洲 SEPA）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">会计管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">捐款管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贷款管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">边距</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">报告</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">合作</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">共享日历/议程（具有</font><font style="vertical-align: inherit;">第三方工具集成的导入/导出功能</font></font><code>ical</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font><code>vcal</code><font style="vertical-align: inherit;"></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">项目和任务管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赛事组织</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">票务系统</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">调查</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HR-人力资源管理</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">员工休假管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">费用报告</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">招聘管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">员工/员工管理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">时间表</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-other-applicationmodules" class="anchor" aria-hidden="true" tabindex="-1" href="#other-applicationmodules"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他应用程序/模块</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子文档管理 (EDM)</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">书签</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">报告</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">数据导出/导入</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">条形码</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">LDAP 连接</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">点击拨号集成</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">群发电子邮件</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RSS 集成</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">社交平台链接</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支付平台集成（PayPal、Stripe、Paybox...）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">电子邮件收集器</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认情况下大约有 100 个可用模块，官方市场 Dolistore.com 上有 1000 多个插件）</font></font></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-other-general-features" class="anchor" aria-hidden="true" tabindex="-1" href="#other-general-features"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其他一般功能</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多语言支持（大多数主要语言的本地化）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">具有细粒度权限的多用户和组</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多币种</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">多公司（通过添加外部模块）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">非常用户友好且易于使用</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">可定制的仪表板</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高度可定制：仅启用您需要的模块，添加用户个性化字段，选择您的皮肤，多个菜单管理器（可由内部用户用作具有特定菜单的后台，或由外部用户用作具有另一个菜单的前台）一）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">API（REST、SOAP）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">易于理解、维护和开发的代码（没有沉重框架的PHP；触发器和钩子架构）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持许多特定于国家/地区的功能：
+</font></font><ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">西班牙税务 RE 和 ISPF</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">法国 NPR 增值税税率（DOM-TOM 的增值税称为“Non Perçue Récupérable”）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加拿大双重征税（联邦/省）和其他使用累积增值税的国家</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">突尼斯印花税票</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阿根廷发票编号使用 A、B、C...</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">希腊从 AADE、所有发票类型、MyData（外部免费模块）获取客户增值税详细信息</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ZATCA 电子发票二维码</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">符合</font></font><a href="https://europa.eu/legislation_summaries/taxation/l31057_en.htm" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">欧洲指令</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（2006/112/CE ... 2010/45/UE）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">符合数据隐私规则（欧洲的 GDPR，...）</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">...</font></font></li>
+</ul>
+</li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">灵活生成发票、提案、订单的 PDF 和 ODT...</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">...</font></font></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-system-environment--requirements" class="anchor" aria-hidden="true" tabindex="-1" href="#system-environment--requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">系统环境/要求</font></font></h3>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PHP</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MariaDB、MySQL 或 PostgreSQL</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">与所有符合 PHP 和 MySQL 或 PostgreSQL 先决条件的云解决方案兼容。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><a href="https://wiki.dolibarr.org/index.php/Prerequisite" rel="nofollow"><font style="vertical-align: inherit;">请参阅Wiki</font></a><font style="vertical-align: inherit;">上的具体要求</font></font><a href="https://wiki.dolibarr.org/index.php/Prerequisite" rel="nofollow"><font style="vertical-align: inherit;"></font></a></p>
+<h3 tabindex="-1" dir="auto"><a id="user-content-extending" class="anchor" aria-hidden="true" tabindex="-1" href="#extending"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">延伸</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://www.dolistore.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 可以通过DoliStore</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提供的第三方开发人员提供的许多其他外部应用程序或模块进行扩展</font><font style="vertical-align: inherit;">。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-what-dolibarr-cant-do-yet" class="anchor" aria-hidden="true" tabindex="-1" href="#what-dolibarr-cant-do-yet"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 还不能做什么</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr尚未</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">完全支持以下功能</font><font style="vertical-align: inherit;">：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">项目中的任务依赖关系</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">薪资模块</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">本机嵌入式 Webmail，但您可以向 Dolibarr 中的联系人发送电子邮件，其中包含报价、发票等。</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 还不能煮咖啡</font></font></li>
+</ul>
+<h2 tabindex="-1" dir="auto"><a id="user-content-documentation" class="anchor" aria-hidden="true" tabindex="-1" href="#documentation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文档</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">管理员、用户、开发人员和翻译人员的文档以及 Wiki 中的其他社区资源均可</font></font><a href="https://wiki.dolibarr.org" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-contributing" class="anchor" aria-hidden="true" tabindex="-1" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这个项目的存在要感谢所有做出贡献的人。</font><font style="vertical-align: inherit;">请阅读有关如何贡献的说明（报告错误/错误、功能请求、发送代码……）[</font></font><a href="https://github.com/Dolibarr/dolibarr/blob/develop/.github/CONTRIBUTING.md"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对贡献者的看法：</font></font></p>
+<p dir="auto"><a href="https://github.com/Dolibarr/dolibarr/graphs/contributors"><img src="https://camo.githubusercontent.com/a641a400eef38e00a93b572dcfc30d13ceaaeefbca951d09ed9189142d20cf62/68747470733a2f2f6f70656e636f6c6c6563746976652e636f6d2f646f6c69626172722f636f6e7472696275746f72732e7376673f77696474683d38393026627574746f6e3d66616c7365" alt="多利巴尔" data-canonical-src="https://opencollective.com/dolibarr/contributors.svg?width=890&amp;button=false" style="max-width: 100%;"></a></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-credits" class="anchor" aria-hidden="true" tabindex="-1" href="#credits"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">学分</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dolibarr 是许多贡献者多年来的成果，并使用了一些优秀的 PHP 库。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请参阅</font></font><a href="https://github.com/Dolibarr/dolibarr/blob/develop/COPYRIGHT"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">版权</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">文件。</font></font></p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-news-and-social-networks" class="anchor" aria-hidden="true" tabindex="-1" href="#news-and-social-networks"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">新闻和社交网络</font></font></h2>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关注 Dolibarr 项目：</font></font></p>
+<ul dir="auto">
+<li><a href="https://www.facebook.com/dolibarr" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Facebook</font></font></a></li>
+<li><a href="https://x.com/dolibarr" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">X</font></font></a></li>
+<li><a href="https://www.linkedin.com/company/association-dolibarr" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">领英</font></font></a></li>
+<li><a href="https://www.reddit.com/r/Dolibarr_ERP_CRM/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">红迪网</font></font></a></li>
+<li><a href="https://www.youtube.com/user/DolibarrERPCRM" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">YouTube</font></font></a></li>
+<li><a href="https://github.com/Dolibarr/dolibarr"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">GitHub</font></font></a></li>
+</ul>
+<h3 tabindex="-1" dir="auto"><a id="user-content-sponsors" class="anchor" aria-hidden="true" tabindex="-1" href="#sponsors"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">赞助商</font></font></h3>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">成为赞助商来支持该项目。</font><font style="vertical-align: inherit;">您的徽标将显示在这里。</font><font style="vertical-align: inherit;">🙏 [</font></font><a href="https://opencollective.com/dolibarr#backer" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">成为赞助商/支持者</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">]</font></font></p>
+</article></div>
